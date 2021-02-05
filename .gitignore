@@ -10,6 +10,7 @@ dectalk/
 discord.log
 logs/
 data/
+config/cookies.txt
 config/options.ini
 config/permissions.ini
 config/aliases.json
