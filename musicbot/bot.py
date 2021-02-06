@@ -2476,6 +2476,19 @@ class MusicBot(discord.Client):
                 delete_after=20,
             )
 
+    async def cmd_stop(self, player, channel):#, author, message, permissions, voice_channel, param=""):
+        """
+        Usage:
+            {command_prefix}stop
+        Stops the player (clears queue then skips current playback)
+        """
+
+        player.playlist.clear()
+        player.skip()
+
+        await self.safe_send_message(channel, "Fine, I'll stop. :rolling_eyes:  Use {0}disconnect if you don't want me around.".format(self.config.command_prefix))
+        return
+
     async def cmd_volume(self, message, player, new_volume=None):
         """
         Usage:
